@@ -1,0 +1,11 @@
+node_modules/
+dist/
+release/
+build/
+/cache/
+test-library/
+test-results/
+*.log
+*.tmp
+.tools/
+.DS_Store

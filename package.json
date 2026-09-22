@@ -1,0 +1,70 @@
+{
+  "name": "sound-constellations",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Explore your local sounds by acoustic similarity.",
+  "author": "Sound Constellations",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "main": "dist/main/main.cjs",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node node_modules/typescript/bin/tsc --noEmit && node scripts/build.mjs",
+    "start": "node scripts/start.mjs",
+    "test": "node node_modules/vitest/vitest.mjs run",
+    "test:library": "node scripts/generate-library.mjs",
+    "test:integration": "node scripts/integration.mjs",
+    "test:ui": "node scripts/smoke.mjs",
+    "format": "node node_modules/prettier/bin/prettier.cjs --write src scripts tests *.ts *.json *.md",
+    "build:win": "node node_modules/typescript/bin/tsc --noEmit && node scripts/build.mjs && node node_modules/electron-builder/cli.js --win --dir"
+  },
+  "dependencies": {
+    "ffmpeg-static": "^5.3.0",
+    "lucide-react": "^0.468.0",
+    "meyda": "^5.6.3",
+    "music-metadata": "^11.12.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "three": "^0.183.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@types/three": "^0.183.0",
+    "@vitejs/plugin-react": "^5.1.0",
+    "electron": "^44.4.3",
+    "electron-builder": "^26.0.0",
+    "esbuild": "^0.27.0",
+    "playwright": "^1.58.0",
+    "prettier": "^3.9.8",
+    "typescript": "^5.9.0",
+    "vite": "^7.3.0",
+    "vitest": "^4.0.0"
+  },
+  "build": {
+    "appId": "ca.soundconstellations.desktop",
+    "productName": "Sound Constellations",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "assets/**/*",
+      "package.json",
+      "LICENSE",
+      "THIRD_PARTY_NOTICES.md"
+    ],
+    "asarUnpack": [
+      "node_modules/ffmpeg-static/**"
+    ],
+    "win": {
+      "target": "dir",
+      "icon": "assets/icon.ico",
+      "signExecutable": false
+    }
+  }
+}
