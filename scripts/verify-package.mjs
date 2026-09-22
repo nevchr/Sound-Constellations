@@ -8,8 +8,9 @@ const profile = path.join(output, 'benchmark-5000');
 const packaged = process.argv.includes('--packaged');
 const env = { ...process.env };
 delete env.ELECTRON_RUN_AS_NODE;
+const packageJson = JSON.parse(await readFile('package.json', 'utf8'));
 const executablePath = packaged
-  ? path.resolve('release/win-unpacked/Sound Constellations.exe')
+  ? path.resolve(packageJson.build.directories.output, 'win-unpacked/Sound Constellations.exe')
   : undefined;
 const app = await electron.launch({
   executablePath,

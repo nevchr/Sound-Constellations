@@ -2,9 +2,14 @@
   "name": "sound-constellations",
   "version": "0.1.0",
   "private": true,
-  "description": "Explore your local sounds by acoustic similarity.",
+  "description": "Discover your local audio library in an interactive constellation of acoustically similar sounds.",
   "author": "Sound Constellations",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nevchr/Sound-Constellations.git"
+  },
+  "homepage": "https://github.com/nevchr/Sound-Constellations#readme",
   "type": "module",
   "engines": {
     "node": ">=24.0.0"
@@ -19,7 +24,9 @@
     "test:integration": "node scripts/integration.mjs",
     "test:ui": "node scripts/smoke.mjs",
     "format": "node node_modules/prettier/bin/prettier.cjs --write src scripts tests *.ts *.json *.md",
-    "build:win": "node node_modules/typescript/bin/tsc --noEmit && node scripts/build.mjs && node node_modules/electron-builder/cli.js --win --dir"
+    "build:win": "node node_modules/typescript/bin/tsc --noEmit && node scripts/build.mjs && node node_modules/electron-builder/cli.js --win --x64 --publish never && node scripts/release-checksums.mjs",
+    "build:dir": "node node_modules/typescript/bin/tsc --noEmit && node scripts/build.mjs && node node_modules/electron-builder/cli.js --win --dir --publish never",
+    "test:installed": "node scripts/verify-installed.mjs"
   },
   "dependencies": {
     "ffmpeg-static": "^5.3.0",
@@ -49,7 +56,7 @@
     "appId": "ca.soundconstellations.desktop",
     "productName": "Sound Constellations",
     "directories": {
-      "output": "release"
+      "output": "release/0.1.0"
     },
     "files": [
       "dist/**/*",
@@ -58,13 +65,60 @@
       "LICENSE",
       "THIRD_PARTY_NOTICES.md"
     ],
+    "extraFiles": [
+      {
+        "from": "docs/INSTALL.md",
+        "to": "Getting Started.txt"
+      },
+      {
+        "from": "THIRD_PARTY_NOTICES.md",
+        "to": "Third-Party Notices.txt"
+      },
+      {
+        "from": "LICENSE",
+        "to": "Application License.txt"
+      }
+    ],
     "asarUnpack": [
       "node_modules/ffmpeg-static/**"
     ],
     "win": {
-      "target": "dir",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
       "icon": "assets/icon.ico",
       "signExecutable": false
+    },
+    "nsis": {
+      "artifactName": "Sound-Constellations-Setup-${version}-${arch}.${ext}",
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": false,
+      "allowToChangeInstallationDirectory": true,
+      "packElevateHelper": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Sound Constellations",
+      "uninstallDisplayName": "Sound Constellations",
+      "deleteAppDataOnUninstall": false,
+      "runAfterFinish": true,
+      "installerIcon": "assets/icon.ico",
+      "uninstallerIcon": "assets/icon.ico"
+    },
+    "portable": {
+      "artifactName": "Sound-Constellations-Portable-${version}-${arch}.${ext}",
+      "requestExecutionLevel": "user"
     }
   }
 }

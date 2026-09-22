@@ -34,3 +34,25 @@ Exact results vary with background load, graphics settings, and storage. Repeate
 Not established by these checks: human listening quality on a real sample collection, every encoding variant, OS-native picker navigation itself, physical speaker output, a complete accessibility/security audit, signed-installer behavior, or clean-machine compatibility. Previews are deliberately limited to 30 seconds. Long-file waveforms describe sampled windows.
 
 Run commands and architecture are in `README.md`; license and redistribution preparation are in `THIRD_PARTY_NOTICES.md`.
+
+## Windows installer and portable release
+
+The 0.1.0 setup and portable executables were built and validated on 22 September 2026. Both contain the Electron runtime and local decoder.
+
+| Check                  | Result                                                                                                          |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Setup executable       | NSIS guided installer, Windows x64, 138,414,599 bytes                                                           |
+| Portable executable    | Standalone launcher, Windows x64, 138,176,008 bytes                                                             |
+| Installation           | Exit code 0; installed into a fresh temporary directory outside the source checkout                             |
+| Prerequisite isolation | Application PATH restricted to Windows and System32; NODE_PATH, FFmpeg overrides, and development flags removed |
+| Installed application  | 12 generated WAVs analyzed successfully; real preview playback started; no renderer errors                      |
+| Relaunch               | All 12 records reused from the cache                                                                            |
+| Shortcuts              | Start menu and desktop shortcuts created                                                                        |
+| Uninstallation         | Exit code 0; test application, uninstall registration, and shortcuts removed                                    |
+| Data preservation      | Separate test profile and SQLite cache retained                                                                 |
+| Portable application   | Launched its bundled runtime, analyzed 12 WAVs, played a preview, and exited successfully                       |
+| Regression suite       | All 15 unit tests passed                                                                                        |
+
+`scripts/verify-installed.mjs` produces `test-results/installer-results.json` and installed/portable screenshots. It refuses to replace an existing installation or interrupt an already-running app. The checked installation and removal apply only to the temporary installation created by that test.
+
+SHA-256 checksums accompany the release in `SHA256SUMS.txt`. The executable builds are unsigned. A clean Windows virtual machine was not available, so clean-machine compatibility has not been directly verified; the isolated installation and restricted application PATH establish that developer tools are not being resolved from this checkout.
