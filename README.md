@@ -3,7 +3,7 @@
   <h1>Sound Constellations</h1>
   <p><strong>Discover the sounds between your folders.</strong></p>
   <p>A private, offline Windows audio explorer that maps your sample library by acoustic similarity.</p>
-  <p><a href="https://github.com/nevchr/Sound-Constellations/releases/tag/v0.1.0">Download for Windows</a> · <a href="docs/INSTALL.md">Installation guide</a> · <a href="docs/DEVELOPMENT.md">How it works</a></p>
+  <p><strong><a href="https://github.com/nevchr/Sound-Constellations/releases/download/v0.1.0/Sound-Constellations-Setup-0.1.0-x64.exe">Download for Windows</a></strong> · <a href="docs/INSTALL.md">Installation guide</a> · <a href="docs/DEVELOPMENT.md">How it works</a></p>
 </div>
 
 ![Sound Constellations showing an audio library, waveform preview, and similar sounds](docs/images/constellation.png)
@@ -18,8 +18,8 @@ Your audio library has more in common than its folder structure can show. Sound 
 
 | Download                                                                                      | Best for                                                                                 |
 | --------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| **[Windows installer](https://github.com/nevchr/Sound-Constellations/releases/tag/v0.1.0)**   | Recommended. Guided setup, Start menu and desktop shortcuts, and a standard uninstaller. |
-| **[Portable executable](https://github.com/nevchr/Sound-Constellations/releases/tag/v0.1.0)** | Run the same app without installing or creating shortcuts.                               |
+| **[Windows installer](https://github.com/nevchr/Sound-Constellations/releases/download/v0.1.0/Sound-Constellations-Setup-0.1.0-x64.exe)**   | Recommended. Guided setup, Start menu and desktop shortcuts, and a standard uninstaller. |
+| **[Portable executable](https://github.com/nevchr/Sound-Constellations/releases/download/v0.1.0/Sound-Constellations-Portable-0.1.0-x64.exe)** | Run the same app without installing or creating shortcuts.                               |
 
 Download **Sound-Constellations-Setup-0.1.0-x64.exe**, open it, then choose a sample folder. Everything the app needs is bundled, including the desktop runtime and audio decoder. You do not need Node.js, Python, FFmpeg, or an account to run it. Installation and use work offline after downloading.
 
