@@ -2,7 +2,7 @@
   <img src="assets/icon.png" width="88" alt="Sound Constellations icon">
   <h1>Sound Constellations</h1>
   <p><strong>Discover the sounds between your folders.</strong></p>
-  <p>A private, offline Windows audio explorer that maps your sample library by acoustic similarity.</p>
+  <p>An offline Windows audio explorer that maps your sample library by acoustic similarity.</p>
   <p><strong><a href="https://github.com/nevchr/Sound-Constellations/releases/download/v0.1.0/Sound-Constellations-Setup-0.1.0-x64.exe">Download for Windows</a></strong> · <a href="docs/INSTALL.md">Installation guide</a> · <a href="docs/DEVELOPMENT.md">How it works</a></p>
 </div>
 
@@ -23,7 +23,7 @@ Your audio library has more in common than its folder structure can show. Sound 
 
 Download **Sound-Constellations-Setup-0.1.0-x64.exe**, open it, then choose a sample folder. Everything the app needs is bundled, including the desktop runtime and audio decoder. You do not need Node.js, Python, FFmpeg, or an account to run it. Installation and use work offline after downloading.
 
-This repository is private, so downloading from GitHub requires access. A directly shared installer works without a GitHub account. The initial release is unsigned; Windows may show an unknown-publisher or SmartScreen notice. See the [installation guide](docs/INSTALL.md) for details.
+Downloads are available directly from GitHub without signing in. The initial release is unsigned; Windows may show an unknown-publisher or SmartScreen notice. See the [installation guide](docs/INSTALL.md) for details.
 
 ## Built for listening and discovery
 

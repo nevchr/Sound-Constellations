@@ -21,6 +21,6 @@ Choose either edition. Node.js, Python, FFmpeg, and other development tools are 
 
 Windows 10/11 on Intel or AMD x64, with a working graphics driver. This is an unsigned early release, so Windows may show an unknown-publisher or SmartScreen warning. Previews cover the first 30 seconds of each file. The portable edition also keeps settings and cache in the Windows user profile.
 
-The repository and this release are private. GitHub downloads require access; the downloaded installer can also be shared directly with a tester.
+The repository and downloads are public. No GitHub account is needed to download, install, or use the app.
 
 See [installation instructions](https://github.com/nevchr/Sound-Constellations/blob/main/docs/INSTALL.md) and [verification notes](https://github.com/nevchr/Sound-Constellations/blob/main/VERIFICATION.md) for details.

@@ -44,6 +44,6 @@ Close the app, then remove **Sound Constellations** through Windows Settings →
 
 To update, close the app and run the newer installer. The installer retains your saved app data.
 
-## Private GitHub downloads
+## GitHub downloads
 
-This repository is private. Downloading directly from its GitHub Releases page requires a GitHub account with access. If the owner shares the `.exe` file with you directly, you do not need a GitHub account to install or use it.
+This repository and its downloads are public. You do not need a GitHub account to download, install, or use the app.
