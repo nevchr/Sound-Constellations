@@ -72,6 +72,6 @@ Previews cover the first **30 seconds** of a sound. Waveforms for longer files s
 
 This is an early Windows release. Additional listening tests with varied real sample libraries, clean-machine compatibility checks, and code signing are the next release priorities.
 
-## License
+## Third-party software
 
-Application source: [MIT](LICENSE). Bundled components retain their own licenses; see [third-party notices](THIRD_PARTY_NOTICES.md).
+Bundled components retain their own licenses; see [third-party notices](THIRD_PARTY_NOTICES.md).

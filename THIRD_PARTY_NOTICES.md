@@ -16,6 +16,6 @@ Sound Constellations uses open-source components locally. It does not call exter
 
 The Windows development package includes Electron's `LICENSE` and `LICENSES.chromium.html`, plus FFmpeg's license and build information in `resources/app.asar.unpacked/node_modules/ffmpeg-static/`.
 
-FFmpeg's packaged build README identifies its source revision as https://github.com/FFmpeg/FFmpeg/commit/e38092ef93. Before public redistribution, prepare the required corresponding source and third-party notices for the precise binaries shipped; this local development build is not a reviewed public distribution. The application source license does not replace dependency licenses.
+FFmpeg's packaged build README identifies its source revision as https://github.com/FFmpeg/FFmpeg/commit/e38092ef93. Before public redistribution, prepare the required corresponding source and third-party notices for the precise binaries shipped; this local development build is not a reviewed public distribution. Bundled dependencies retain their own licenses.
 
 Generated test audio is synthesized by this project. It contains no third-party recordings.
